@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
-// Initialize SendGrid with API key (you'll need to set this in your .env.local file)
-const sendgridApiKey = process.env.SENDGRID_API_KEY;
-if (sendgridApiKey) {
-  sgMail.setApiKey(sendgridApiKey);
-}
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Helper function to save contact submissions to a JSON file
 async function saveContactSubmission(data: any) {
@@ -50,43 +47,46 @@ async function saveContactSubmission(data: any) {
   }
 }
 
-// Function to send email using SendGrid
+// Function to send email using Resend
 async function sendEmail(data: any) {
   const { name, email, message } = data;
   
-  if (!sendgridApiKey) {
-    console.warn('SendGrid API key not found. Email will not be sent.');
+  if (!process.env.RESEND_API_KEY) {
+    console.warn('Resend API key not found. Email will not be sent.');
     return false;
   }
   
-  const msg = {
-    to: 'tuni@wellnessvendingsolutions.com',
-    from: process.env.SENDGRID_FROM_EMAIL || 'tuni@wellnessvendingsolutions.com',
-    subject: `New Contact Form Submission from ${name}`,
-    text: `
-      Name: ${name}
-      Email: ${email}
-      
-      Message:
-      ${message}
-    `,
-    html: `
-      <div>
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      </div>
-    `,
-    replyTo: email,
-  };
-  
   try {
-    await sgMail.send(msg);
+    const { data: emailData, error } = await resend.emails.send({
+      from: 'Wellness Vending Solutions <contact@wellnessvendingsolutions.com>',
+      to: ['tuni@wellnessvendingsolutions.com'],
+      subject: `New Contact Form Submission from ${name}`,
+      replyTo: email,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #4f46e5;">New Contact Form Submission</h2>
+          <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap;">${message}</p>
+          </div>
+          <p style="color: #6b7280; font-size: 12px; margin-top: 20px;">
+            This message was sent from the Wellness Vending Solutions website contact form.
+          </p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Error sending email with Resend:', error);
+      return false;
+    }
+
+    console.log('Email sent successfully:', emailData);
     return true;
   } catch (error) {
-    console.error('Error sending email with SendGrid:', error);
+    console.error('Error sending email with Resend:', error);
     return false;
   }
 }
@@ -130,4 +130,4 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
-} 
+}
