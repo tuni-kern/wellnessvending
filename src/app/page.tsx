@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ContactForm from '../components/ContactForm';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import StickyMobileCTA from '../components/StickyMobileCTA';
 import Script from 'next/script';
 
 export default function Home() {
@@ -61,16 +62,24 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Snack Smart!</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Free Healthy Vending for Your San Diego Office</h1>
               <p className="text-xl mb-8">
-                A small, family owned business, since 2017 here at Wellness Vending we provide custom healthy and traditional vending options for your office, business or team at no cost to you.
+                No cost, no contract, full service. Family-run since 2017.
               </p>
-              <Link 
-                href="#contact" 
-                className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300"
-              >
-                Get Started
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="tel:6197767976"
+                  className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300 text-center"
+                >
+                  Call (619) 776-7976
+                </a>
+                <Link
+                  href="#contact"
+                  className="bg-white/10 border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white/20 transition duration-300 text-center"
+                >
+                  Get My Free Consultation
+                </Link>
+              </div>
             </div>
             <div className="md:w-1/2 hidden md:block">
               <div className="rounded-lg overflow-hidden border-4 border-white shadow-2xl transform rotate-3">
@@ -154,12 +163,6 @@ export default function Home() {
               <p className="text-lg text-gray-600 mb-6">
                 Upgrade your vending options with state-of-the-art refrigerated machines capable of serving full meals like burritos, sandwiches and salads. Accept all forms of electronic payment and provide a convenient and delicious option for employees.
               </p>
-              <Link 
-                href="#contact" 
-                className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-secondary transition duration-300"
-              >
-                Learn More
-              </Link>
             </div>
             <div className="md:w-1/2 rounded-lg overflow-hidden shadow-lg">
               <Image
@@ -272,6 +275,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      <StickyMobileCTA />
     </main>
   );
 } 
