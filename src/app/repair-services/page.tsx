@@ -61,7 +61,7 @@ export default function RepairServicesPage() {
         <div className="container">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Vending Machine Repair — San Diego
+              Vending Machine Repair in San Diego
             </h1>
             <p className="text-xl mb-8">
               Broken card reader? Machine not cooling? Price sync failing? We fix it. Most issues resolve over the phone. On-site when hardware calls for it.
@@ -112,7 +112,7 @@ export default function RepairServicesPage() {
               </ul>
             </div>
           </div>
-          <p className="text-center text-sm text-gray-500 mt-8">Same-day service available at +50%. Emergency calls mid-Uber hours (5-10 AM PT) will go to voicemail — we return calls starting 10 AM.</p>
+          <p className="text-center text-sm text-gray-500 mt-8">Same-day service available at +50%.</p>
         </div>
       </section>
 
