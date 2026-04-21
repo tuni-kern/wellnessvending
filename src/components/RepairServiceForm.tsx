@@ -113,7 +113,7 @@ export default function RepairServiceForm() {
 
       <div>
         <label htmlFor="issue" className={labelClass}>What's going on?</label>
-        <textarea id="issue" name="issue" value={formData.issue} onChange={handleChange} rows={4} className={inputClass} placeholder="Describe the issue — error codes, what you've tried, anything useful" required></textarea>
+        <textarea id="issue" name="issue" value={formData.issue} onChange={handleChange} rows={4} className={inputClass} placeholder="Describe the issue. Error codes, what you've tried, anything useful." required></textarea>
       </div>
 
       <div>

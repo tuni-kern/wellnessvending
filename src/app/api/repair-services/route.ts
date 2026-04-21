@@ -55,7 +55,7 @@ async function sendEmail(data: RepairSubmission) {
     const { data: emailData, error } = await resend.emails.send({
       from: 'Wellness Vending Solutions <contact@wellnessvendingsolutions.com>',
       to: ['tuni@wellnessvendingsolutions.com'],
-      subject: `[REPAIR] ${data.urgency.toUpperCase()} — ${data.name} — ${data.machineType}`,
+      subject: `[REPAIR] ${data.urgency.toUpperCase()} | ${data.name} | ${data.machineType}`,
       replyTo: data.email || undefined,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
