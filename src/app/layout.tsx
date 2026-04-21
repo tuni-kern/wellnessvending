@@ -44,9 +44,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wellnessvendingsolutions.com',
   },
-  verification: {
-    google: 'verification_token', // Replace with your Google verification token when you have one
-  },
   authors: [{ name: 'Tuni Kern', url: 'https://wellnessvendingsolutions.com' }],
   category: 'Vending Services',
   metadataBase: new URL('https://wellnessvendingsolutions.com'),

@@ -8,13 +8,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Helper function to save contact submissions to a JSON file
 async function saveContactSubmission(data: any) {
-  const { name, email, message } = data;
+  const { name, email, phone, company, message } = data;
   const timestamp = new Date().toISOString();
   const submission = {
     id: Date.now().toString(),
     timestamp,
     name,
     email,
+    phone,
+    company,
     message,
     status: 'pending'
   };
@@ -49,18 +51,18 @@ async function saveContactSubmission(data: any) {
 
 // Function to send email using Resend
 async function sendEmail(data: any) {
-  const { name, email, message } = data;
-  
+  const { name, email, phone, company, message } = data;
+
   if (!process.env.RESEND_API_KEY) {
     console.warn('Resend API key not found. Email will not be sent.');
     return false;
   }
-  
+
   try {
     const { data: emailData, error } = await resend.emails.send({
       from: 'Wellness Vending Solutions <contact@wellnessvendingsolutions.com>',
       to: ['tuni@wellnessvendingsolutions.com'],
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${name}${company ? ` (${company})` : ''}`,
       replyTo: email,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -68,6 +70,8 @@ async function sendEmail(data: any) {
           <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin-top: 20px;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
+            ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
             <p><strong>Message:</strong></p>
             <p style="white-space: pre-wrap;">${message}</p>
           </div>
