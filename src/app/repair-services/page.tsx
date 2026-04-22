@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import StickyMobileCTA from '../../components/StickyMobileCTA';
 import RepairServiceForm from '../../components/RepairServiceForm';
 
 export const metadata = {
@@ -201,6 +202,7 @@ export default function RepairServicesPage() {
         </div>
       </section>
 
+      <StickyMobileCTA secondaryHref="#request" secondaryLabel="Request Service" />
       <Footer />
     </main>
   );
