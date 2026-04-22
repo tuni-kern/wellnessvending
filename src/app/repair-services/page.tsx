@@ -7,9 +7,9 @@ import StickyMobileCTA from '../../components/StickyMobileCTA';
 import RepairServiceForm from '../../components/RepairServiceForm';
 
 export const metadata = {
-  title: 'Vending Machine Repair San Diego | Wellness Vending Solutions',
+  title: 'Vending Machine Repair San Diego | Flat Rate, Family-Run Since 2017',
   description:
-    'Professional vending machine repair and support in San Diego. Remote troubleshooting from $95, on-site from $200. Terminal setup, payments, refrigeration, and more.',
+    'Same-week vending machine repair in San Diego County. Flat $95 phone diagnostics, $200 on-site. No hidden fees. Family-run since 2017.',
   alternates: { canonical: 'https://wellnessvendingsolutions.com/repair-services' },
 };
 
