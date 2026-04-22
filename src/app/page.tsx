@@ -192,14 +192,14 @@ export default function Home() {
               <div className="rounded-lg overflow-hidden mb-4 h-48">
                 <Image
                   src="/Semaya1.jpg"
-                  alt="Semaya from Wellness Vending Solutions - Customer Relations Specialist in San Diego"
+                  alt="Semaya, Tuni's daughter and Chief Taste Tester at Wellness Vending Solutions in San Diego"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Semaya</h3>
-              <p className="text-gray-600">Customer Relations</p>
+              <p className="text-gray-600">Chief Taste Tester</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="rounded-lg overflow-hidden mb-4 h-48 flex items-center justify-center">
@@ -219,14 +219,14 @@ export default function Home() {
               <div className="rounded-lg overflow-hidden mb-4 h-48">
                 <Image
                   src="/Sophia1.jpg"
-                  alt="Sophia from Wellness Vending Solutions - Inventory Management Specialist in San Diego"
+                  alt="Sophia, Tuni's daughter and Snack Quality Inspector at Wellness Vending Solutions in San Diego"
                   width={200}
                   height={200}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-2">Sophia</h3>
-              <p className="text-gray-600">Inventory Management</p>
+              <p className="text-gray-600">Snack Quality Inspector</p>
             </div>
           </div>
         </div>
