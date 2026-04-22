@@ -153,6 +153,22 @@ export default function RepairServicesPage() {
         </div>
       </section>
 
+      {/* Mid-page CTA */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container text-center">
+          <h2 className="text-3xl font-bold mb-4">Know what&apos;s wrong? Skip the form.</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Call or text <a href="tel:6197767976" className="underline font-semibold">619-776-7976</a> and we&apos;ll diagnose on the first call. Most issues resolve in 10 minutes.
+          </p>
+          <a
+            href="tel:6197767976"
+            className="inline-block bg-white text-primary px-8 py-4 rounded-md font-semibold hover:bg-gray-100 transition duration-300"
+          >
+            Call 619-776-7976
+          </a>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-gray-50">
         <div className="container">
