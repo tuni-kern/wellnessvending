@@ -122,18 +122,18 @@ export default function RepairServicesPage() {
         </div>
       </section>
 
-      {/* What we service */}
+      {/* Common Problems */}
       <section className="py-20 bg-white">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">What We Service</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Common Problems We Fix</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              ['Card Readers & Terminals', 'Nayax, Cantaloupe, USA Tech, Monarch. Setup, onboarding, credentials, payment processor integration.'],
-              ['Payment Troubleshooting', 'Cashless readers, bill validators, coin mechs, MDB communication, "accepts cash but not card" issues.'],
-              ['Software & Pricing', 'Price changes, DEX reads, planogram mapping, VMS config.'],
-              ['Refrigeration & Cooling', 'Compressor issues, temperature config, fridge machines (Federal and similar).'],
-              ['Mechanical', 'Stuck motors, broken spirals, door sensors, elevator shelves.'],
-              ['General Diagnostics', 'Not sure what’s wrong? We triage and quote before committing.'],
+              ["Card reader won't work", "Won't take cards, takes cash but not cards, or won't power on."],
+              ["Machine not cooling", "Warm drinks, compressor running loud, breaker tripping."],
+              ["Products stuck or not dispensing", "Motor spins but nothing drops, broken spirals, jammed items."],
+              ["Won't take cash or coins", "Bill validator rejecting, coins falling through, stuck coin returns."],
+              ["Prices or display wrong", "Pricing updates, new product setup, display or software errors."],
+              ["Not sure what's wrong?", "We diagnose and quote before committing. No guesswork on your end."],
             ].map(([title, desc]) => (
               <div key={title} className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -141,6 +141,9 @@ export default function RepairServicesPage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-sm text-gray-500 mt-8 max-w-3xl mx-auto">
+            We also handle Nayax, Cantaloupe, USA Tech, and Monarch terminals, DEX reads, VMS and planogram setup, MDB troubleshooting, and refrigeration systems.
+          </p>
         </div>
       </section>
 
