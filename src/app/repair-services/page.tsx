@@ -96,7 +96,7 @@ export default function RepairServicesPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Transparent Pricing</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-2">Remote</h3>
+              <h3 className="text-2xl font-semibold mb-2">Phone or Video</h3>
               <p className="text-4xl font-bold text-primary mb-4">$95<span className="text-lg text-gray-500 font-normal"> flat</span></p>
               <p className="text-gray-600 mb-4">Phone, text, or video troubleshooting. Up to 30 minutes. Most issues resolve here.</p>
               <ul className="text-gray-600 space-y-2">
@@ -107,7 +107,7 @@ export default function RepairServicesPage() {
               </ul>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-2">On-Site</h3>
+              <h3 className="text-2xl font-semibold mb-2">On-Site Visit</h3>
               <p className="text-4xl font-bold text-primary mb-4">$200<span className="text-lg text-gray-500 font-normal"> flat</span></p>
               <p className="text-gray-600 mb-4">In-person visit within SD county (15 mi). Beyond 15 mi: $0.70/mi. Parts at cost + 15%.</p>
               <ul className="text-gray-600 space-y-2">
@@ -118,7 +118,13 @@ export default function RepairServicesPage() {
               </ul>
             </div>
           </div>
-          <p className="text-center text-sm text-gray-500 mt-8">Same-day service available at +50%.</p>
+          <div className="max-w-4xl mx-auto mt-8 bg-white border border-primary/30 rounded-lg p-6 text-center">
+            <p className="text-lg font-semibold mb-1">Need it today?</p>
+            <p className="text-gray-600">Add same-day service for +50%. Call before noon for best availability.</p>
+          </div>
+          <p className="text-center text-gray-600 mt-6 max-w-3xl mx-auto">
+            No diagnostic fees. If a phone call can&apos;t fix it, your $95 rolls into the on-site rate. You never pay twice.
+          </p>
         </div>
       </section>
 
