@@ -100,7 +100,7 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">What You Get</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -108,9 +108,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Healthy Options</h3>
+              <h3 className="text-xl font-semibold mb-3">$0 Cost, No Contracts</h3>
               <p className="text-gray-600">
-                We offer a wide range of healthy snacks and beverages to keep your team energized and focused throughout the day.
+                Installation, stocking, and servicing are all on us. You provide the floor space. We do the rest.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -119,9 +119,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Full Meals</h3>
+              <h3 className="text-xl font-semibold mb-3">Snacks, Drinks &amp; Full Meals</h3>
               <p className="text-gray-600">
-                Our refrigerated machines can serve full meals like burritos, sandwiches, and salads for a convenient lunch option.
+                Custom mix tailored to your team. Healthy options, traditional favorites, refrigerated meals for real lunches.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -130,9 +130,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Electronic Payments</h3>
+              <h3 className="text-xl font-semibold mb-3">Modern Payment on Every Machine</h3>
               <p className="text-gray-600">
-                All our machines accept various forms of electronic payment for a seamless vending experience.
+                Cards, tap-to-pay, mobile, cash. Your team buys what they want, however they want.
               </p>
             </div>
             <Link
@@ -154,34 +154,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Technology Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">Better technology equals better service</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Upgrade your vending options with state-of-the-art refrigerated machines capable of serving full meals like burritos, sandwiches and salads. Accept all forms of electronic payment and provide a convenient and delicious option for employees.
-              </p>
-            </div>
-            <div className="md:w-1/2 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/WellnessMachine.png"
-                alt="Modern vending machine with healthy food options and electronic payment systems in San Diego"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section id="about" className="py-20 bg-gray-50">
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-12">About Wellness Vending Solutions</h2>
-          
+
           <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="text-lg text-gray-600 mb-6">
               Since 2017, Wellness Vending Solutions has been providing businesses with quality vending services. As a small, family-owned business, we take pride in our personalized approach and commitment to customer satisfaction.
@@ -190,7 +167,25 @@ export default function Home() {
               Our mission is to offer convenient, healthy food and beverage options that contribute to the wellbeing of your team while requiring no investment from your business.
             </p>
           </div>
-          
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="/MCP10_3.jpg"
+                alt="Wellness Vending Solutions family team providing vending services in San Diego since 2017"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Growing Together Since 2017</h3>
+              <p className="text-lg text-gray-600">
+                Our journey began with a simple idea: provide healthier snack options to businesses and their employees. What started as a small family venture has grown into a thriving business serving San Diego.
+              </p>
+            </div>
+          </div>
+
           <h3 className="text-2xl font-bold text-center mb-8">Meet Our Family Team</h3>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -237,29 +232,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Family Gallery Section */}
-      <section className="py-16 bg-white">
+      {/* FAQ Section */}
+      <section className="py-20 bg-white">
         <div className="container">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Family Journey</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/MCP10_3.jpg"
-                alt="Wellness Vending Solutions family team providing vending services in San Diego since 2017"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">Growing Together Since 2017</h3>
-              <p className="text-lg text-gray-600 mb-4">
-                Our journey began with a simple idea: provide healthier snack options to businesses and their employees. What started as a small family venture has grown into a thriving business serving the community.
-              </p>
-              <p className="text-lg text-gray-600">
-                We believe that being family-owned gives us a unique perspective on customer service. We treat every client like they're part of our extended family, providing personalized service and attention to detail that larger companies simply can't match.
-              </p>
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-12">Common Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              ["Is it really free?", "Yes. Installation and servicing are free. The machines earn enough from sales that we don't need to charge you anything."],
+              ["What if our team doesn't use it?", "If usage is low, we swap the product mix or remove the machine at no charge. No commitment, no penalty."],
+              ["How long does installation take?", "Usually 1-2 weeks from your yes. We handle delivery, setup, and first stocking."],
+              ["Can we pick what's stocked?", "Yes. We consult with you on selection and adjust based on what sells at your location."],
+              ["What if the machine breaks?", "We service it. Repair and restocking are included."],
+              ["Do you serve my neighborhood?", "We cover all of San Diego County. Call if you're unsure."],
+            ].map(([q, a]) => (
+              <div key={q} className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold mb-2">{q}</h3>
+                <p className="text-gray-600">{a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
