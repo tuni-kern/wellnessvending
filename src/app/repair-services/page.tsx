@@ -61,12 +61,12 @@ export default function RepairServicesPage() {
         <div className="container">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Vending Machine Repair in San Diego
+              Same-Week Vending Machine Repair in San Diego
             </h1>
-            <p className="text-xl mb-8">
-              Broken card reader? Machine not cooling? Price sync failing? We fix it. Most issues resolve over the phone. On-site when hardware calls for it.
+            <p className="text-xl mb-6">
+              Flat rates. No diagnostic fees. Most fixes happen over the phone. Family-run since 2017, serving all of San Diego County.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <a
                 href="tel:6197767976"
                 className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300 text-center"
@@ -79,6 +79,12 @@ export default function RepairServicesPage() {
               >
                 Request Service
               </Link>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
+              <span>✓ Since 2017</span>
+              <span>✓ All SD County</span>
+              <span>✓ Flat-rate pricing</span>
+              <span>✓ Any brand, any operator</span>
             </div>
           </div>
         </div>
