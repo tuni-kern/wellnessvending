@@ -64,3 +64,72 @@ export const BUSINESS = {
     '92126', '92127', '92128', '92129', '92130', '92131', '92139', '92154',
   ],
 } as const;
+
+const ORG_ID = `${SITE_URL}/#organization`;
+const LOCAL_BUSINESS_ID = `${SITE_URL}/#localbusiness`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const FAQPAGE_ID = `${SITE_URL}/#faqpage`;
+
+export const schemaGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: BUSINESS.name,
+      url: BUSINESS.url,
+      logo: { '@type': 'ImageObject', url: BUSINESS.logo },
+      sameAs: BUSINESS.sameAs,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: BUSINESS.telephone,
+        contactType: 'customer service',
+      },
+      founder: { '@type': 'Person', name: 'Tuni Kern' },
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': LOCAL_BUSINESS_ID,
+      name: BUSINESS.name,
+      image: BUSINESS.image,
+      logo: BUSINESS.logo,
+      description: BUSINESS.description,
+      url: BUSINESS.url,
+      telephone: BUSINESS.telephone,
+      address: { '@type': 'PostalAddress', ...BUSINESS.address },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: BUSINESS.geo.latitude,
+        longitude: BUSINESS.geo.longitude,
+      },
+      priceRange: '$$',
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '17:00',
+      },
+      areaServed: BUSINESS.areaServed,
+      sameAs: BUSINESS.sameAs,
+      parentOrganization: { '@id': ORG_ID },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': WEBSITE_ID,
+      name: BUSINESS.name,
+      url: BUSINESS.url,
+      publisher: { '@id': ORG_ID },
+      inLanguage: 'en-US',
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': FAQPAGE_ID,
+      isPartOf: { '@id': WEBSITE_ID },
+      mainEntity: FAQS.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
