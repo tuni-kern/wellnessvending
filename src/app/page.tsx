@@ -6,55 +6,18 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import StickyMobileCTA from '../components/StickyMobileCTA';
 import Script from 'next/script';
+import { FAQS, schemaGraph } from '../lib/schema';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Structured Data for LocalBusiness */}
-      <Script id="structured-data" type="application/ld+json" 
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Wellness Vending Solutions",
-            "image": "https://wellnessvendingsolutions.com/WVFamily.avif",
-            "description": "A family-owned business providing custom healthy and traditional vending options for offices, businesses, and teams in San Diego, CA.",
-            "url": "https://wellnessvendingsolutions.com",
-            "telephone": "619-776-7976",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "San Diego",
-              "addressRegion": "CA",
-              "postalCode": "91977",
-              "addressCountry": "US"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "", // Add when available
-              "longitude": "" // Add when available
-            },
-            "priceRange": "$$",
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-              ],
-              "opens": "08:00",
-              "closes": "17:00"
-            },
-            "sameAs": [
-              "https://maps.app.goo.gl/zUJFPNVFkbfvuZHu6"
-            ],
-            "servesCuisine": "Healthy Snacks and Beverages",
-            "areaServed": ["San Diego", "91977", "92101", "92102", "92103", "92104", "92105", "92106", "92107", "92108", "92109", "92110", "92111", "92112", "92113", "92114", "92115", "92116", "92117", "92119", "92120", "92121", "92122", "92123", "92124", "92126", "92127", "92128", "92129", "92130", "92131", "92139", "92154"]
-          })
-        }}
+      {/* Structured Data: cross-linked entity graph (see src/lib/schema.ts) */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
 
       {/* Hero Section */}
@@ -222,17 +185,10 @@ export default function Home() {
         <div className="container">
           <h2 className="text-3xl font-bold text-center mb-12">Common Questions</h2>
           <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              ["Is it really free?", "Yes. Installation and servicing are free. The machines earn enough from sales that we don't need to charge you anything."],
-              ["What if our team doesn't use it?", "If usage is low, we swap the product mix or remove the machine at no charge. No commitment, no penalty."],
-              ["How long does installation take?", "Usually 1-2 weeks from your yes. We handle delivery, setup, and first stocking."],
-              ["Can we pick what's stocked?", "Yes. We consult with you on selection and adjust based on what sells at your location."],
-              ["What if the machine breaks?", "We service it. Repair and restocking are included."],
-              ["Do you serve my neighborhood?", "We cover all of San Diego County. Call if you're unsure."],
-            ].map(([q, a]) => (
-              <div key={q} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                <h3 className="text-lg font-semibold mb-2">{q}</h3>
-                <p className="text-gray-600">{a}</p>
+            {FAQS.map(({ question, answer }) => (
+              <div key={question} className="bg-gray-50 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold mb-2">{question}</h3>
+                <p className="text-gray-600">{answer}</p>
               </div>
             ))}
           </div>
