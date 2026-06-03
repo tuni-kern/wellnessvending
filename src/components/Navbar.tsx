@@ -26,9 +26,6 @@ export default function Navbar() {
           <Link href="#services" className="text-gray-700 font-medium hover:text-primary">
             Services
           </Link>
-          <Link href="/repair-services" className="text-gray-700 font-medium hover:text-primary">
-            Repair
-          </Link>
           <Link href="#about" className="text-gray-700 font-medium hover:text-primary">
             About Us
           </Link>
@@ -65,13 +62,6 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
-            </Link>
-            <Link
-              href="/repair-services"
-              className="text-gray-700 font-medium hover:text-primary"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Repair
             </Link>
             <Link
               href="#about"
