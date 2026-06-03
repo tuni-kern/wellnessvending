@@ -5,3 +5,7 @@ node_modules/
 .env*.local
 *.log
 .DS_Store
+
+# Contact form submissions (contains customer PII, must not be in a public repo)
+contacts/submissions.json
+tsconfig.tsbuildinfo
